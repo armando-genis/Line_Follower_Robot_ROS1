@@ -1,0 +1,3 @@
+<launch>
+    <node name="sign_identification" pkg="sign_identification" type="sign_identification.py" output = "screen"/>
+</launch>

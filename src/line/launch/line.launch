@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="node_start_delay" default="2.0" />
+
+    <node name="lines_node" pkg="line" type="line.py" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' " output="screen"/> 
+    
+</launch>

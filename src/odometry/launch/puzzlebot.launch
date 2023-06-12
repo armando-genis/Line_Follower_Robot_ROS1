@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="odometry" type="robot.py" name="odometry" />
+    <!-- <node name="record_odom_bag" pkg="rosbag" type="record" args="/odometry"/> -->
+    
+</launch>

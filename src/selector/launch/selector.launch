@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="node_start_delay" default="6.0" />
+    <!-- Serial communicaction to esp32 pkg -->
+    <include file="$(find puzzlebot_autostart)/launch/puzzlebot_autostart.launch"/>
+    <!-- Camara pkg -->
+    <include file="$(find ros_deep_learning)/launch/video_source.ros1.launch"/>
+    <!-- signal pkg -->
+    <include file="$(find sign_identification)/launch/sign_identification.launch"/>
+    <!-- Web pkg -->
+    <!-- <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/> -->
+    <!-- Line planning for pad pkg -->
+    <include file="$(find line)/launch/line.launch"/>
+    <!-- Trafict light detection pkg -->
+    <include file="$(find traffic_light_detection)/launch/traffic_light_detection.launch"/>
+    <!-- Horizontal line detection -->
+    <include file="$(find horizontal_line)/launch/horizontal_line.launch"/>
+    <!-- Odometry -->
+    <include file="$(find odometry)/launch/puzzlebot.launch"/>
+
+    <node name="selector_node" pkg="selector" type="selector.py" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' " output="screen"/> 
+    
+</launch>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="node_start_delay" default="3.0" />
+    <!-- <include file="$(find ros_deep_learning)/launch/video_source.ros1.launch"/> -->
+
+    <node name="color_traffic" pkg="traffic_light_detection" type="traffic_light.py" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' " output="screen"/> 
+    
+</launch>

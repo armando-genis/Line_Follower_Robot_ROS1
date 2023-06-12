@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="node_start_delay" default="3.0" />
+
+    <node name="horizontal_line_node" pkg="horizontal_line" type="horizontal_line.py" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' " output="screen"/> 
+    
+</launch>
